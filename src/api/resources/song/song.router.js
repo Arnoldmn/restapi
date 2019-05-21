@@ -3,5 +3,5 @@ import songController from './song.controller';
 
 export const songRouter = express.Router();
 
-songRouter.get('/')
+songRouter.route('/')
     .post(songController.create);

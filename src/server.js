@@ -9,7 +9,7 @@ connect();
 app.get('/', (req, res) => {
     res.status(200).json({
         status: 200,
-        message: 'Get your water meter read anytime in where',
+        message: 'Get favorite congolese music songs and party loud!',
     });
 });
 

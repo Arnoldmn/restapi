@@ -1,9 +1,11 @@
 import express from 'express';
+import { connect } from './config/db';
 
 const app = express();
 
 const PORT = process.env.PORT || 7000;
 
+connect();
 app.get('/', (req, res) => {
     res.status(200).json({
         status: 200,

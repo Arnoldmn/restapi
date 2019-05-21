@@ -1,18 +1,14 @@
 import express from 'express';
 import { connect } from './config/db';
+import { restRouter } from './api/app';
 
 const app = express();
 
 const PORT = process.env.PORT || 7000;
 
 connect();
-app.get('/', (req, res) => {
-    res.status(200).json({
-        status: 200,
-        message: 'Get favorite congolese music songs and party loud!',
-    });
-});
 
+app.use('/api', restRouter)
 app.use((req, res, next) => {
     const error = new Error('Not found');
     error.message = 'Invalid route';

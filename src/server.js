@@ -7,7 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 connect();
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api', restRouter)
 app.use((req, res, next) => {
     const error = new Error('Not found');
